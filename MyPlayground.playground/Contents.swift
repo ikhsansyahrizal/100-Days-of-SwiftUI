@@ -1,50 +1,42 @@
 import Cocoa
 
-var greeting = "Hello, playground"
-greeting = "now it's ikhsan"
-print(greeting)
+//Boolean
+let goodDogs = true
+let gameOver = false
 
-//Constant variable
-let welcome = "Welcome to swift \"playground\" "
-//welcome = "now it's ikhsan"
-print(welcome)
+// or u can assign it with operater that return true / false
+let isMultiple = 120.isMultiple(of: 3)
+let fileName = "paris.jpg"
+print(fileName.hasSuffix(".jpg"))
 
-//create strings
-let movie = """
-Once
-Upon A
-Time
-In
-Mexice
-"""
+//flip bool value with !
+var isAuth = false
+isAuth = !isAuth
 
-//number
-let oneMillion = 1_000_000
-var counter = 10
-counter += 5
-
-//decimal number
-let test = 0.1 + 0.2
-
-let a = 1
-let b = 2.0
-
-//can't mix int and double (type safety)
-let c = a + Int(b)
-
-var rating = 5.0
-rating *= 2
+//you also can flip the value with toogle()
+var isSleeping = true
+print(isSleeping)
+isSleeping.toggle()
+print(isSleeping)
 
 
 
-print(movie)
-print(movie.count)
-print(greeting.uppercased())
-print(welcome.hasPrefix("Welcome"))
-print(oneMillion - 1_000_00)
-print(oneMillion + 2_000_00)
-print(oneMillion * 2)
-print(oneMillion / 2_000_00)
-print(test)
-print(c)
-print(rating)
+// Join string
+
+//using +
+let firstPart = "Hello, "
+let secondPart = "World"
+let greeting = firstPart + secondPart
+let greeting2 = firstPart + "My " + secondPart
+
+//using string interpolation
+let name = "ikhsan"
+let age = "24"
+let message = "Hello, my name is \(name) i'm \(age) years old"
+
+
+// Checkpoint 1 convert celcius to fanrenheit
+let celciusNum = 100
+var farenheit = (celciusNum * 9) / 5 + 32
+print(celciusNum)
+print(farenheit)
