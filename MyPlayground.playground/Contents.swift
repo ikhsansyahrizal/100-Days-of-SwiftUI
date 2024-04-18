@@ -1,42 +1,70 @@
 import Cocoa
 
-//Boolean
-let goodDogs = true
-let gameOver = false
+//empty array
+var score = Array<Int>()
+var anotherSchore = [String]()
 
-// or u can assign it with operater that return true / false
-let isMultiple = 120.isMultiple(of: 3)
-let fileName = "paris.jpg"
-print(fileName.hasSuffix(".jpg"))
+// save value on array
+var country = ["indo","singapore", "malay", "thai", "vietnam"]
+var age = [1,2,3,4]
+var height = [12.3, 24.5, 12.5]
 
-//flip bool value with !
-var isAuth = false
-isAuth = !isAuth
+//contains
+var checkCountry = country.contains("indo")
 
-//you also can flip the value with toogle()
-var isSleeping = true
-print(isSleeping)
-isSleeping.toggle()
-print(isSleeping)
+//sorted
+var sortCountry = country.sorted()
+sortCountry.reverse()
+print(sortCountry)
 
+//var notAllow = age.append("tyes")
 
+// add adn remove value with
+country.append("india")
+age.append(10)
+height.append(9.2)
+print(country)
+print(age)
+print(height)
 
-// Join string
+age.remove(at: 0)
+print(age)
 
-//using +
-let firstPart = "Hello, "
-let secondPart = "World"
-let greeting = firstPart + secondPart
-let greeting2 = firstPart + "My " + secondPart
-
-//using string interpolation
-let name = "ikhsan"
-let age = "24"
-let message = "Hello, my name is \(name) i'm \(age) years old"
+print(country[0])
 
 
-// Checkpoint 1 convert celcius to fanrenheit
-let celciusNum = 100
-var farenheit = (celciusNum * 9) / 5 + 32
-print(celciusNum)
-print(farenheit)
+// dictionaries
+let employee = [
+    "name": "Taylor Swift",
+    "job": "Singer",
+    "location": "Nashville",
+]
+
+//define key and value data type
+var dataPerson = [String: Int]()
+dataPerson["Age"] = 23
+dataPerson["Height"] = 170
+dataPerson["kids"] = 0
+
+print(employee["name", default: "Unknown"])
+print(employee["notExist", default: "Unknown"])
+
+
+// set
+let nameSet = Set(["stephern", "rowling", "choco"])
+var movie = Set<String>()
+movie.insert("marvel")
+movie.insert("batman")
+movie.insert("flas")
+
+print(movie)
+
+
+// enum
+enum Weekday {
+    case sunday, monday, tuesday, thurstday, friday, saturday
+}
+
+var day = Weekday.monday
+day = Weekday.friday
+day = .thurstday

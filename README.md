@@ -9,6 +9,7 @@ i also learn about :
 - variables (var and constant let)
 - create strings, number, decimal
 - assign value and basic math operator
+---
 
 
 ## Day 2
@@ -25,4 +26,25 @@ let greeting = "hi" + "my" + "name" + "is" + "ikhsan"
 ```
 
 > for more efficient way and flexible to combine with other data type, use string interpolation instead.
+----
 
+
+## Day 3
+
+i'm learning about arrays, dictionaries, set and enum.
+
+array - > store multiple data
+
+dictionaries -> key and value 
+
+set -> not allow same data and wont remember position, must be unique data.
+
+enum -> set of named and value, are really optimized by swift
+
+noted :
+- in array, swift provide a few funcionality like append, remove, sorted, reverse, and contains.
+- single array can't contains different data type.
+- enum are best to store like error type, or some case that would not change and constant
+
+> set are very optimize to get item than dictionaries and array.
+----
