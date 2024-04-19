@@ -47,3 +47,18 @@ noted :
 
 > set are very optimize to get item than dictionaries and array.
 ----
+
+
+## Day 4
+
+i'm learning about type annotations on var, const, and collection and create and program that print number of items in array and print uniq item of it.
+
+type inferense -> swift figure out itself what data type we store in variable
+
+noted: 
+- swift cant define data type on var based on the value, but can't define what data type should be used
+- swift make sure that you can't use empty var/const. 
+- set can be create from array with Set(someArray)
+
+> use type annotation as much as possible to make avoid mistake data type, that can lead to unexpected result / error
+----

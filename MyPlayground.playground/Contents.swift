@@ -1,70 +1,48 @@
 import Cocoa
 
-//empty array
-var score = Array<Int>()
-var anotherSchore = [String]()
+let username: String = "Lasso"
+let core: Double = 0
 
-// save value on array
-var country = ["indo","singapore", "malay", "thai", "vietnam"]
-var age = [1,2,3,4]
-var height = [12.3, 24.5, 12.5]
-
-//contains
-var checkCountry = country.contains("indo")
-
-//sorted
-var sortCountry = country.sorted()
-sortCountry.reverse()
-print(sortCountry)
-
-//var notAllow = age.append("tyes")
-
-// add adn remove value with
-country.append("india")
-age.append(10)
-height.append(9.2)
-print(country)
-print(age)
-print(height)
-
-age.remove(at: 0)
-print(age)
-
-print(country[0])
+let playerName: String = "Roy"
+var luckyNumber: Int = 1
+let pi: Double = 3.14
+var isAuth: Bool = true
 
 
-// dictionaries
-let employee = [
-    "name": "Taylor Swift",
-    "job": "Singer",
-    "location": "Nashville",
-]
+//array, dictionaries, set
+var albums: [String] = ["Red", "Fearless"]
+var users: [String: String] = ["id": "a cup"]
+var books: Set<String> = Set(["batman", "spiderman", "ant man"])
 
-//define key and value data type
-var dataPerson = [String: Int]()
-dataPerson["Age"] = 23
-dataPerson["Height"] = 170
-dataPerson["kids"] = 0
+var soda: [String] = ["coke", "pepsi"]
+var teams: [String] = [String]()
+var cities: [String] = []
+var clues = [String]()
 
-print(employee["name", default: "Unknown"])
-print(employee["notExist", default: "Unknown"])
-
-
-// set
-let nameSet = Set(["stephern", "rowling", "choco"])
-var movie = Set<String>()
-movie.insert("marvel")
-movie.insert("batman")
-movie.insert("flas")
-
-print(movie)
-
-
-// enum
-enum Weekday {
-    case sunday, monday, tuesday, thurstday, friday, saturday
+enum UIStyle {
+    case dark, system, light
 }
 
-var day = Weekday.monday
-day = Weekday.friday
-day = .thurstday
+var style: UIStyle = UIStyle.dark
+style = .light
+
+//create empt constant
+let friendName: String
+friendName = "angela"
+//cant re assign let twice
+print(friendName)
+
+
+var test: String
+
+
+// Checkpoint test
+
+// number of array
+let theArray = ["sleep","eat","run","eat","walk"]
+print(theArray.count)
+
+
+//uniq item on array
+let uniqItem = Set(theArray)
+print(uniqItem)
