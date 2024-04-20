@@ -62,3 +62,16 @@ noted:
 
 > use type annotation as much as possible to make avoid mistake data type, that can lead to unexpected result / error
 ----
+
+
+## Day 5 
+
+i'm learning about if, switch and ternary conditional operator. 
+
+
+noted:
+- you can do multiple condition in if 
+- you can do nested if or switch
+- in switch you have fallthrough to execute below case.
+----
+

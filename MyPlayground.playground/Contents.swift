@@ -1,48 +1,110 @@
 import Cocoa
 
-let username: String = "Lasso"
-let core: Double = 0
+// if
 
-let playerName: String = "Roy"
-var luckyNumber: Int = 1
-let pi: Double = 3.14
-var isAuth: Bool = true
+let speed = 80
+let grade = 60
 
-
-//array, dictionaries, set
-var albums: [String] = ["Red", "Fearless"]
-var users: [String: String] = ["id": "a cup"]
-var books: Set<String> = Set(["batman", "spiderman", "ant man"])
-
-var soda: [String] = ["coke", "pepsi"]
-var teams: [String] = [String]()
-var cities: [String] = []
-var clues = [String]()
-
-enum UIStyle {
-    case dark, system, light
+if speed < 90 {
+    print("you're slow")
+} else {
+    print("you're fast")
 }
 
-var style: UIStyle = UIStyle.dark
-style = .light
-
-//create empt constant
-let friendName: String
-friendName = "angela"
-//cant re assign let twice
-print(friendName)
+if grade <= 60 {
+    print("you're past")
+} else {
+    print("learn more")
+}
 
 
-var test: String
+// check string conditiion who initiate first
+let name1 = "stephen"
+let name2 = "Aston"
+
+if name1 > name2 {
+    print("\(name1) first then \(name2)")
+}
+
+if name1 < name2{
+    print("\(name2) first then \(name1)")
+}
+
+var someNum = [1,2,3]
+if someNum.count > 2 {
+    someNum.append(0)
+    print(someNum)
+} else {
+    someNum.removeLast()
+    print(someNum)
+}
+
+let noName = ""
+
+if noName.isEmpty {
+    print("is empty")
+}
+
+let arrayOfname = ["susan", "john", "doe"]
+
+if arrayOfname.contains("susan") {
+    print("susan exist")
+} else if arrayOfname.contains("doe") {
+    print("doe exist")
+} else {
+    print("none of them exist")
+}
+
+if arrayOfname.count > 1 && arrayOfname.contains("doe") {
+    print("true")
+}
+
+let num1 = 12
+let num2 = 20
+
+if num1 > 13 || num2 < 30 {
+    print(true)
+}
 
 
-// Checkpoint test
+let place = "Manhattan"
 
-// number of array
-let theArray = ["sleep","eat","run","eat","walk"]
-print(theArray.count)
+switch place {
+case "Boston":
+    print("it's on boston")
+    
+case "New York":
+    print("it's on new york")
+    
+case "Hollywod":
+    print("horray hollw wood")
+    
+case "Manhattan":
+    print("it's a manhattan")
+    
+default:
+    print("its not there")
+}
 
+let ring = 2
 
-//uniq item on array
-let uniqItem = Set(theArray)
-print(uniqItem)
+switch ring {
+    
+case 1:
+    print("1 ring")
+    
+case 2:
+    print("2 ring")
+    fallthrough
+case 3:
+    print("3 ring")
+    fallthrough
+case 4:
+    print("4 ring")
+
+default:
+    print("no ring")
+}
+
+let userAge = 12
+let canVote = userAge > 18 ? "yes can vote" : "sorry, too young"
