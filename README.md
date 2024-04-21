@@ -75,3 +75,13 @@ noted:
 - in switch you have fallthrough to execute below case.
 ----
 
+## Day 6
+
+i'm learning about iteration with for, while and make program FizzBuzz. 
+
+noted:
+- you can do nested for or while or combine
+- you can use continue or break 
+- you can use _ if no need to use the iteration variable
+----
+
