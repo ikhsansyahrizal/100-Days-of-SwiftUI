@@ -85,3 +85,17 @@ noted:
 - you can use _ if no need to use the iteration variable
 ----
 
+## Day 7
+
+i'm learning about functions, with return, param, multiple return with tuple and customize param label.
+
+function -> is piece of code that separate from main func / body
+
+
+note:
+- you don't have to use return if there is only 1 line of code
+- you can use return on non-return func ti exit
+- in tuple you can use _ if you're not using the param
+- when labelize param name, inside func use internal name and outside func (calling the func) use external name
+----
+

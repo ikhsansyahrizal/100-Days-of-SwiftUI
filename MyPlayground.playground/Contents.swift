@@ -1,73 +1,59 @@
 import Cocoa
 
-// iteration with for
+// functions
 
-let loops = ["ios", "macos", "tvos", "watchos"]
-for os in loops {
-    print("ios works well in \(os)")
+func showWelcome() {
+    print("Hello")
+    print("Welcome to playgorund")
+    print("Have fun :)")
 }
 
-for i in 1...10 {
-    print("\(i) time tables")
-    
-    for x in 1...10 {
-        print("\(i) x \(x) = \(i*x)")
+showWelcome()
+
+//with param
+func printTimeTable(number: Int, end: Int) {
+    for i in 1...end {
+        print("\(number) * \(i) = \(number * i)")
     }
 }
 
-var lyric = "Haters gonna "
+printTimeTable(number: 5, end: 20)
 
-for _ in 1...15 {
-    lyric += "hate "
+
+// func with return
+
+func areLetterIdentical(string1: String, string2: String) -> Bool {
+    string1.sorted() == string2.sorted()
 }
 
-print(lyric)
+areLetterIdentical(string1: "sds", string2: "sds")
+areLetterIdentical(string1: "sds", string2: "sds3")
 
-
-// while
-
-var countdown = 10
-
-while countdown > 0 {
-    print(countdown)
-    countdown -= 1
-}
-print("blastOff")
-
-
-// continue and break
-for i in 1...10 {
-    if i == 5 {
-        print("its continue")
-        continue
-    }
-    
-    if i == 8 {
-        break
-    }
-    print(i)
-
+func pythagoras(a: Double, b: Double) -> Double {
+    sqrt(a * a + b * b)
 }
 
+pythagoras(a: 3, b: 4)
 
-// checkpoint
 
-// fizzbuzz
+// multiple return with tuple
 
-for i in 1...100 {
-    
-    if i.isMultiple(of: 3) && i.isMultiple(of: 5) {
-        print("FizzBuzz")
-    }
-    
-    if i.isMultiple(of: 3) {
-        print("Fizz")
-    }
-    
-    if i.isMultiple(of: 5) {
-        print("Buzz")
-    }
-    
-    
-    print (i)
+func getUser() -> (firstName: String, secondName: String) {
+    (firstName: "John", secondName: "Doe")
 }
+
+//let name = getUser()
+//let first = getUser().firstName
+//let second = getUser().secondName
+let (first, second) = getUser()
+print(first + " " + second)
+
+// external name param
+
+func timeTable(times number: Int) {
+    for i in 1...10 {
+        print("\(number) * \(i) = \(number*i)")
+    }
+}
+
+timeTable(times: 9)
