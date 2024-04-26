@@ -101,7 +101,7 @@ note:
 
 ## Day 8
 
-i'm learning about default value param, handle error in function,  
+i'm learning about default value param, handle error in function, i also create and program that find square root of number with validaton (error handling).
 
 
 note: 
