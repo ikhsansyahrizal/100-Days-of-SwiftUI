@@ -1,59 +1,32 @@
 import Cocoa
 
-// functions
+//handle error in function
 
-func showWelcome() {
-    print("Hello")
-    print("Welcome to playgorund")
-    print("Have fun :)")
+enum PasswordError: Error {
+    case short, obvius
 }
 
-showWelcome()
-
-//with param
-func printTimeTable(number: Int, end: Int) {
-    for i in 1...end {
-        print("\(number) * \(i) = \(number * i)")
+func checkPassword(_ password: String) throws -> String {
+    
+    if password.count < 5 { throw PasswordError.short}
+    if password == "1234" { throw PasswordError.obvius}
+    
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
     }
 }
 
-printTimeTable(number: 5, end: 20)
+let string = "125"
 
-
-// func with return
-
-func areLetterIdentical(string1: String, string2: String) -> Bool {
-    string1.sorted() == string2.sorted()
+do {
+    let result = try checkPassword(string)
+    print("Password rating: \(result)")
+} catch PasswordError.short {
+    print("Password too short")
+} catch {
+    print("There was an Error.")
 }
-
-areLetterIdentical(string1: "sds", string2: "sds")
-areLetterIdentical(string1: "sds", string2: "sds3")
-
-func pythagoras(a: Double, b: Double) -> Double {
-    sqrt(a * a + b * b)
-}
-
-pythagoras(a: 3, b: 4)
-
-
-// multiple return with tuple
-
-func getUser() -> (firstName: String, secondName: String) {
-    (firstName: "John", secondName: "Doe")
-}
-
-//let name = getUser()
-//let first = getUser().firstName
-//let second = getUser().secondName
-let (first, second) = getUser()
-print(first + " " + second)
-
-// external name param
-
-func timeTable(times number: Int) {
-    for i in 1...10 {
-        print("\(number) * \(i) = \(number*i)")
-    }
-}
-
-timeTable(times: 9)

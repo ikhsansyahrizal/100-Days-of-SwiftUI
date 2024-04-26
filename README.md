@@ -99,3 +99,11 @@ note:
 - when labelize param name, inside func use internal name and outside func (calling the func) use external name
 ----
 
+## Day 8
+
+i'm learnign about default value param, handle error in function,  
+
+
+note: 
+- when removeAll array and will be store another value, you can use KeepCapacity to save the memory alocation for the array. so it don't have to re grow the memory for array.
+- 
