@@ -101,9 +101,11 @@ note:
 
 ## Day 8
 
-i'm learnign about default value param, handle error in function,  
+i'm learning about default value param, handle error in function,  
 
 
 note: 
 - when removeAll array and will be store another value, you can use KeepCapacity to save the memory alocation for the array. so it don't have to re grow the memory for array.
-- 
+- you can spesific call error type or general it (better spesific the error)
+- use do , try, and catch to use throws on function
+----
