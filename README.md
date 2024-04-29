@@ -109,3 +109,18 @@ note:
 - you can spesific call error type or general it (better spesific the error)
 - use do , try, and catch to use throws on function
 ----
+
+## Day 9
+
+i'm learning about closure, trailing closure, function as param and aslo create program for checkpoint 5.
+
+
+note:
+- you can directly use closure in constant / variable
+- you can custom .sorted functionality
+- you also can pass function into other function (like custom sorted)
+- in closure we don't use param name on argument
+- there is also trailing closure (it less clearly but shortend syntax)
+- anywhere you pass func, you also can pass closure
+- shortened param name $0 and $1
+----
