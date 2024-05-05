@@ -42,3 +42,4 @@ struct Employee {
 var archer = Employee(name: "SusaN", vacationRemaining: 10)
 archer.takeVacation(days: 2)
 print(archer.vacationRemaining)
+
