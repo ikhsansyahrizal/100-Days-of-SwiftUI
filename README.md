@@ -124,3 +124,20 @@ note:
 - anywhere you pass func, you also can pass closure
 - shortened param name $0 and $1
 ----
+
+## Day 10
+
+i'm learning about struct, mutating struct properties, observe and do action, and custom init.
+
+note:
+- func inside of struct can't change var of the struct. it can be read though
+- use "mutating func .." to change properties (var) of the struct.
+- mutating func on struct data type, only can be call from var. 
+- struct have 2 properties, 
+1. stored properties, place a value directly on struct
+2. computed porperty, recalculate the value over properties every time it's access (blend stored properties and method)
+- there are 2 action on observ property change, willSet & didSet. -> only on struct
+- observe property only can be used on var.
+----
+
+
