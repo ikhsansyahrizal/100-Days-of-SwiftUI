@@ -140,5 +140,23 @@ note:
 - observe property only can be used on var.
 ----
 
+## Day 11
+i'm still learning about struct, how to limit acces for internal data properties, static properties and methods.
+
+static properties and method -> are belong to struct itself (doesn't need to create a instance, can be used directly)
+self -> current value of struct (the value of it)
+Self -> current type of struct (int or string etc)
+
+note:
+- 4 access limit :
+1. private -> only can be access from internal struct
+2. fileprivate -> only current file can access
+3. public -> anyone can access
+4. private(set) -> anyone can read, but only internal struct can modified the value.
+- note that if you have private properties swift can init it, you have to give a default value or make custom init by urself.
+- static properties and methods can't call regular (non-static) properties or method. but it work reversesaly.
+----
+
+
 
 

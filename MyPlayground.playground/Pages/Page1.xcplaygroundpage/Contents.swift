@@ -1,45 +1,41 @@
 import Cocoa
 
-// create struct
-struct Album {
-    let title: String
-    let artist: String
-    let year: Int
+// limit acces to internal properties on stuct
+struct BankAccount {
+    private(set) var funds = 0
     
-    func printSummary() {
-        print("\(title) (\(year)) by \(artist)")
+    mutating func deposit(amount: Int) {
+        funds += amount
     }
-}
-
-let red = Album(title: "Red", artist: "Taylor Swift", year: 2012)
-let black = Album(title: "Black", artist: "Taylor", year: 2013)
-
-print(red.title)
-print(black.year)
-
-red.printSummary()
-black.printSummary()
-
-//change struct data from inside func
-struct Employee {
-    let name: String
-    var vacationRemaining: Int
     
-    
-    //use mutating func instead of func to change struct data value
-    mutating func takeVacation(days: Int) {
-        if vacationRemaining > days {
-            vacationRemaining -= days
-            print("I'm going on vacation!!")
-            print("Days remaining \(vacationRemaining)")
+    mutating func withdraw(amount: Int) -> Bool {
+        if funds > amount {
+            funds -= amount
+            return true
         } else {
-            print("Ooops! there aren't enough days remaining.")
+            return false
         }
     }
 }
 
-//can't be used mutating on let 
-var archer = Employee(name: "SusaN", vacationRemaining: 10)
-archer.takeVacation(days: 2)
-print(archer.vacationRemaining)
+var account = BankAccount()
+account.deposit(amount: 200)
 
+let success = account.withdraw(amount: 100)
+if success {
+    print("withdraw money success")
+} else {
+    print("failed withdraw maoney")
+}
+
+// this should'nt be allow, that why we put private on properties
+//account.funds -= 2000
+
+//private properties with custom init
+struct Person {
+    private var socialSecurityNumber: String
+    init(ssn: String) {
+        socialSecurityNumber = ssn
+    }
+}
+let sarah = Person(ssn: "555-55-5555")
