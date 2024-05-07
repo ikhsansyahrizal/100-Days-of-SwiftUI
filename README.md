@@ -153,10 +153,30 @@ note:
 2. fileprivate -> only current file can access
 3. public -> anyone can access
 4. private(set) -> anyone can read, but only internal struct can modified the value.
-- note that if you have private properties swift can init it, you have to give a default value or make custom init by urself.
+- note that if you have private properties swift can't init it, you have to give a default value or make custom init by urself.
 - static properties and methods can't call regular (non-static) properties or method. but it work reversesaly.
 ----
 
+
+## Day 12
+i'm learning about class, diff clas and struct, deinit class, inherit classes, copy class. and also create checkpoint 7.
+
+class is used to create data types, 5 differ from struct :
+1.You can make one class build upon functionality in another class, gaining all its properties and methods as a starting point. If you want to selectively override some methods, you can do that too.
+2.Because of that first point, Swift won’t automatically generate a memberwise initializer for classes. This means you either need to write your own initializer, or assign default values to all your properties.
+3.When you copy an instance of a class, both copies share the same data – if you change one copy, the other one also changes.
+4.When the final copy of a class instance is destroyed, Swift can optionally run a special function called a deinitializer.
+5.Even if you make a class constant, you can still change its properties as long as they are variables.
+
+note:
+- child will inherit parent classes (properties and method)
+- override func on child if you need to custom inherited method from parent
+- use final class on parent if want to make the class can't be inherited.
+- if u have custom init on child class, make sure also init the init of parent class on the child class. 
+- when you change var that reference from a class, it will also change the class value, use copy() to make the paren't not change. 
+- when create instance of class, you can combine with constant class and variable property of the parent class (vice-versa). but knowing that which instance / properties thaht changing.
+- struct is a data type, and class is a refernce type.
+-----
 
 
 

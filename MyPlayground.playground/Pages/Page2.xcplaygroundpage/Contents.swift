@@ -1,29 +1,42 @@
-import Foundation
+import Cocoa
 
-// static method and properties
-struct School {
-    static var studentCount = 0
 
-    static func add(student: String) {
-        print("\(student) joined the school.")
-        studentCount += 1
+//deinitilazer
+class User {
+    let id: Int
+
+    init(id: Int) {
+        self.id = id
+        print("User \(id): I'm alive!")
+    }
+
+    deinit {
+        print("User \(id): I'm dead!")
     }
 }
 
-School.add(student: "Taylor Swift")
-print(School.studentCount)
+var users = [User]()
 
 
-struct AppData {
-    static let version = "1.3 beta 2"
-    static let saveFilename = "settings.json"
-    static let homeURL = "https://www.hackingwithswift.com"
+for i in 1...3 {
+    let user = User(id: i)
+    print("User \(user.id): I'm in control!")
+    users.append(user)
 }
 
 
-struct Employee {
-    let username: String
-    let password: String
+print("Loop is finished!")
+users.removeAll()
+print("Array is clear!")
 
-    static let example = Employee(username: "cfederighi", password: "hairforceone")
+
+// variabel inside class
+class User2 {
+    var name = "Paul"
 }
+
+var user = User2()
+user.name = "Taylor"
+user = User2()
+print(user.name)
+
