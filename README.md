@@ -179,4 +179,13 @@ note:
 -----
 
 
+## Day 13
+i'm learning about protocol
 
+protocol -> is a bit like contract, blueprint of methods, properties, and other requirements that can be adopted by classes, structs, or enums. bare minimum that it need to implement.
+
+
+note : 
+- u can implement multiple protocl in 1 class/struct
+- it's on possible to create set only properties
+- 
