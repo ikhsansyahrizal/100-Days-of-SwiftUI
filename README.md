@@ -196,4 +196,20 @@ note :
 ----
 
 
+## Day 14
+i'm learning about optionals, guard, nil coalescing, optional chaining. and write checkpoint 9 program.
+
+optional -> is a null safety, the variable might be have a value or nil.
+if let - > will run if var has a value
+guard -> will run if the var doesn't have a value.
+nil coalesing -> if empty, give a default value instead
+
+note:
+- when dealing with optional, commonly use shadowing to use the var
+- other alternatice to unwrap optional, guard, nil coalesing operator
+-----
+
+
+
+
 

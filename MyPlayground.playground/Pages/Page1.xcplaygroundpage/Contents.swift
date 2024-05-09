@@ -1,86 +1,86 @@
 import Cocoa
 
-// create and use protocol
 
-protocol Vehicle {
-    var name: String { get }
-    var currentPassengers: Int { get set }
-    func estimateTime(for distance: Int) -> Int
-    func travel(distance: Int)
+//optioal ?
+var username: String? = nil
+
+if let unwrappedName = username {
+    print("We got a user: \(unwrappedName)")
+} else {
+    print("The optional was empty.")
 }
 
-protocol isElectric {
-    //req
+func square(number: Int) -> Int {
+    number * number
 }
 
-struct Car: Vehicle, isElectric {
-    
-    let name = "Car"
-    var currentPassengers = 1
-    
-    func estimateTime(for distance: Int) -> Int {
-        distance / 50
+var number: Int? = nil
+//not gonna work, need to wrap it with if
+//print(square(number: number))
+
+if let unwrappedNumber = number {
+    print(square(number: unwrappedNumber))
+}
+
+//commonly used make optional as constant
+//shadowing technique
+if let number = number {
+    print(square(number: number))
+}
+
+
+//using guard
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+
+        // 1: We *must* exit the function here
+        return
     }
 
-    func travel(distance: Int) {
-        print("I'm driving \(distance)km.")
-    }
-
-    func openSunroof() {
-        print("It's a nice day!")
-    }
+    // 2: `number` is still available outside of `guard`
+    print("\(number) x \(number) is \(number * number)")
 }
 
 
-func commute(distance: Int, using vehicle: Vehicle) {
-    if vehicle.estimateTime(for: distance) > 100 {
-        print("That's too slow! I'll try a different vehicle.")
-    } else {
-        vehicle.travel(distance: distance)
-    }
+//uisng nil coalesing ??
+let captains = [
+    "Enterprise": "Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko"
+]
+
+let new = captains["Serenity"] ?? "N/A"
+//let new = captains["Serenity", default: "N/A"]
+
+let tvShows = ["Archer", "Babylon 5", "Ted Lasso"]
+let favorite = tvShows.randomElement() ?? "None"
+
+struct Book {
+    let title: String
+    let author: String?
 }
 
-let car = Car()
-commute(distance: 100, using: car)
+let books = Book(title: "Beowulf", author: nil)
+let authors = books.author ?? "Anonymous"
+print(authors)
 
+let input = ""
+let numberr = Int(input) ?? 0
+print(numberr)
 
-struct Bicycle: Vehicle {
-    
-    
-    let name = "Bicycle"
-    var currentPassengers = 1
-    
-    func estimateTime(for distance: Int) -> Int {
-        distance / 10
-    }
+//optional chaining
+let names = ["Arya", "Bran", "Robb", "Sansa"]
 
-    func travel(distance: Int) {
-        print("I'm cycling \(distance)km.")
-    }
+let chosen = names.randomElement()?.uppercased() ?? "No one"
+print("Next in line: \(chosen)")
+
+struct Book2 {
+    let title: String
+    let author: String?
 }
 
-let bike = Bicycle()
-commute(distance: 50, using: bike)
+var book: Book2? = nil
+let authorr = book?.author?.first?.uppercased() ?? "A"
+print(authorr)
 
-
-func getTravelEstimates(using vehicles: [Vehicle], distance: Int) {
-    for vehicle in vehicles {
-        let estimate = vehicle.estimateTime(for: distance)
-        print("\(vehicle.name): \(estimate) hours to travel \(distance)km")
-    }
-}
-
-getTravelEstimates(using: [car, bike], distance: 150)
-
-
-//opaque
-//we hide the return type
-func getRandomNumber() -> some Equatable {
-    Int.random(in: 1...6)
-}
-
-func getRandomBool() -> some Equatable {
-    Bool.random()
-}
-
-print(getRandomNumber() == getRandomNumber())
