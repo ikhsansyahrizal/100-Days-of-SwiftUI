@@ -180,12 +180,20 @@ note:
 
 
 ## Day 13
-i'm learning about protocol
+i'm learning about protocol, opaque return types, extension
 
 protocol -> is a bit like contract, blueprint of methods, properties, and other requirements that can be adopted by classes, structs, or enums. bare minimum that it need to implement.
 
+opaque -> is a "some Equatable" we hide the type of code so we not knowing it, but swift knows it (compiler knows it)
+
+extension -> add functionality 
 
 note : 
 - u can implement multiple protocl in 1 class/struct
 - it's on possible to create set only properties
-- 
+- using opaque you can still get flexible funciantlity such as use it on condition.
+- you can combine extension with custom init.
+----
+
+
+

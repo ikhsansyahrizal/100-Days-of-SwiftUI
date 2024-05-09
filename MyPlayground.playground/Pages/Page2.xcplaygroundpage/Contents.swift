@@ -1,42 +1,92 @@
 import Cocoa
 
+// extension
 
-//deinitilazer
-class User {
-    let id: Int
+//manual
+var quote = "   The truth is rarely pure and never simple   "
+let trimmed = quote.trimmingCharacters(in: .whitespacesAndNewlines)
 
-    init(id: Int) {
-        self.id = id
-        print("User \(id): I'm alive!")
+
+//extension
+extension String {
+    func trimmed() -> String {
+        self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-
-    deinit {
-        print("User \(id): I'm dead!")
+    
+    
+    var lines: [String] {
+        self.components(separatedBy: .newlines)
     }
 }
 
-var users = [User]()
+let trimmed2 = quote.trimmed()
+print(trimmed2)
 
 
-for i in 1...3 {
-    let user = User(id: i)
-    print("User \(user.id): I'm in control!")
-    users.append(user)
+let lyrics = """
+But I keep cruising
+Can't stop, won't stop moving
+It's like I got this music in my mind
+Saying it's gonna be alright
+"""
+
+print(lyrics.lines.count)
+
+
+//example
+
+//with custom init adn extemsion
+struct Book2 {
+    let title: String
+    let pageCount: Int
+    let readingHours: Int
+
+//    init(title: String, pageCount: Int) {
+//        self.title = title
+//        self.pageCount = pageCount
+//        self.readingHours = pageCount / 50
+//    }
+}
+
+extension Book2 {
+    init(title: String, pageCount: Int) {
+        self.title = title
+        self.pageCount = pageCount
+        self.readingHours = pageCount / 50
+    }
+}
+let lotr = Book2(title: "Lord of the Rings", pageCount: 1178)
+print(lotr)
+
+
+extension Array {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
 }
 
 
-print("Loop is finished!")
-users.removeAll()
-print("Array is clear!")
+let guests = ["Mario", "Luigi", "Peach"]
 
-
-// variabel inside class
-class User2 {
-    var name = "Paul"
+if guests.isNotEmpty {
+    print("Guest count: \(guests.count)")
 }
 
-var user = User2()
-user.name = "Taylor"
-user = User2()
-print(user.name)
+//protocl extension
+protocol Person {
+    var name: String { get }
+    func sayHello()
+}
 
+extension Person {
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct Employee: Person {
+    let name: String
+}
+
+let taylor = Employee(name: "Taylor Swift")
+taylor.sayHello()

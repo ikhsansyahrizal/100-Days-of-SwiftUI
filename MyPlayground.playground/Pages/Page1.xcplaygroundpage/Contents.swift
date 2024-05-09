@@ -71,3 +71,16 @@ func getTravelEstimates(using vehicles: [Vehicle], distance: Int) {
 }
 
 getTravelEstimates(using: [car, bike], distance: 150)
+
+
+//opaque
+//we hide the return type
+func getRandomNumber() -> some Equatable {
+    Int.random(in: 1...6)
+}
+
+func getRandomBool() -> some Equatable {
+    Bool.random()
+}
+
+print(getRandomNumber() == getRandomNumber())
