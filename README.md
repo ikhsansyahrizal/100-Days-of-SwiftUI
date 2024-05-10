@@ -209,6 +209,10 @@ note:
 - other alternatice to unwrap optional, guard, nil coalesing operator
 -----
 
+## Day 15
+i'm watching youtube video about summary of swfit fundamental.
+-----
+
 
 
 
