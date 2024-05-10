@@ -213,7 +213,14 @@ note:
 i'm watching youtube video about summary of swfit fundamental.
 -----
 
+## Day 16
+i'm learning about intro to swift ui, creating a form, navigation bar, section, safe area, @State
+, Picker, 
+a two-way binding: we bind the text field so that it shows the value of our property, but we also bind it so that any changes to the text field also update the property.
 
-
+note : 
+- @State is a property wrapper, it's allows us to change struct properties. 
+- apple recommnded to make the var that using state are private.
+----
 
 
