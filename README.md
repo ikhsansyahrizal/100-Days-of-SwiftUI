@@ -223,4 +223,13 @@ note :
 - apple recommnded to make the var that using state are private.
 ----
 
+## Day 17
+i'm creating weSplit app, the app are completed, using section, form, picker and navigation stack.
+
+note:
+- @FocusState
+- you can set curreny in Text() view.
+
+----
+
 
