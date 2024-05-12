@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var value1: Double = 0
     @State private var type1: String = "mm"
     @State private var type2: String = "mm"
+    @FocusState private var isFocus: Bool
+
     let longFormat = ["mm", "cm", "dm", "m", "dk", "hm", "km"]
     
     private var convertToMm: Double {
@@ -62,19 +64,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            Form {
                 Section() {
                     HStack() {
                         TextField("number to convert", value: $value1, format: .number)
                             .multilineTextAlignment(.leading)
                             .padding()
                             .keyboardType(.numberPad)
-                        Picker("Format type", selection: $type1) {
+                            .focused($isFocus)
+                        Picker("Format", selection: $type1) {
                             ForEach(longFormat, id: \.self) {
                                 Text($0)
                             }
                         }
-                        .padding()
                     }
                     
                 }
@@ -82,27 +84,33 @@ struct ContentView: View {
                 Section("Convert to ▼") {
                     HStack() {
                         Text(result, format: .number)
-                            .frame(maxWidth: .infinity,alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
-                        Picker("Format type", selection: $type2) {
+                        Picker("Format", selection: $type2) {
                             ForEach(longFormat, id: \.self) {
                                 Text($0)
                             }
                         }
-                        .padding()
+                        
                     }
                 }
                 
-                
+                Section {
+                    Image("fallout")
+                        .resizable()
+                        .frame(maxWidth: 360, maxHeight: 450)
+                        .aspectRatio(contentMode: .fit)
+                    
+                }
             }
-            .padding()
             .navigationTitle("Conversion App")
-            
-            Image("fallout")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            Spacer()
+            .toolbar {
+                if isFocus {
+                    Button("Done") {
+                        isFocus = false
+                    }
+                }
+            }
         }
         
     }
